@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq.Expressions;
 using Microsoft.Practices.Unity;
+using MPC.Models.DomainModels;
 
 namespace MPC.Repository.BaseRepository
 {
@@ -57,6 +58,11 @@ namespace MPC.Repository.BaseRepository
         {
             this.container = container;
         }
+
+        /// <summary>
+        /// Companies
+        /// </summary>
+        public DbSet<Company> Companies { get; set; }
 
         #endregion
     }

@@ -152,30 +152,11 @@
   <ItemGroup>
     <Compile Include="BaseRepository\BaseDbContext.cs" />
     <Compile Include="BaseRepository\BaseRespository.cs" />
-    <Compile Include="BaseRepository\Company.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseRepository\Language.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseRepository\Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseRepository\Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
+    <Compile Include="BaseRepository\PropertyReference.cs" />
     <Compile Include="BaseRepository\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="BaseRepository\PropertyReference.cs" />
-    <Compile Include="BaseRepository\RegionalSettings.cs">
-      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeRegistrations.cs" />
@@ -188,18 +169,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BaseRepository\Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-    </None>
     <None Include="BaseRepository\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
-    </None>
-    <None Include="BaseRepository\Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
