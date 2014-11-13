@@ -102,6 +102,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainModels\Company.cs" />
+    <Compile Include="DomainModels\Language.cs" />
+    <Compile Include="DomainModels\RegionalSettings.cs" />
     <Compile Include="LoggerModels\LogCategory.cs" />
     <Compile Include="LoggerModels\CategoryLog.cs" />
     <Compile Include="LoggerModels\Log.cs" />
@@ -127,7 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="DomainModels\" />
     <Folder Include="RequestModels\" />
     <Folder Include="ResponseModels\" />
   </ItemGroup>

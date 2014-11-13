@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MPCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteLogo" Type="nvarchar" MaxLength="200" />
+          <Property Name="MISLogo" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address1" Type="varchar" MaxLength="255" />
+          <Property Name="Address2" Type="varchar" MaxLength="255" />
+          <Property Name="Address3" Type="varchar" MaxLength="255" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="int" />
+          <Property Name="Country" Type="int" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="Tel" Type="varchar" MaxLength="50" />
+          <Property Name="Fax" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="URL" Type="varchar" MaxLength="50" />
+          <Property Name="RegNo" Type="varchar" MaxLength="50" />
+          <Property Name="TaxNo" Type="varchar" MaxLength="50" />
+          <Property Name="TaxName" Type="varchar" MaxLength="50" />
+          <Property Name="Language" Type="varchar" MaxLength="50" />
+          <Property Name="CostCentreDLL" Type="image" />
+          <Property Name="CostCentreUpdationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_language">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FriendlyName" Type="varchar" MaxLength="50" />
+          <Property Name="uiCulture" Type="varchar" MaxLength="50" />
+          <Property Name="culture" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MPC.dbo.tbl_nominaldetail' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tbl_nominaldetail">
+          <Property Name="AccountNo" Type="int" />
+          <Property Name="BankDescription" Type="varchar" MaxLength="255" />
+          <Property Name="NoReconciliation" Type="smallint" />
+          <Property Name="BankName" Type="varchar" MaxLength="255" />
+          <Property Name="BankAddress" Type="varchar" MaxLength="255" />
+          <Property Name="BankTown" Type="varchar" MaxLength="50" />
+          <Property Name="BankCounty" Type="varchar" MaxLength="50" />
+          <Property Name="BankPostcode" Type="varchar" MaxLength="50" />
+          <Property Name="AccountName" Type="varchar" MaxLength="255" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="50" />
+          <Property Name="SortCode" Type="varchar" MaxLength="50" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="ContactName" Type="varchar" MaxLength="255" />
+          <Property Name="ContactTel" Type="varchar" MaxLength="50" />
+          <Property Name="ContactFax" Type="varchar" MaxLength="50" />
+          <Property Name="ContactEmail" Type="varchar" MaxLength="255" />
+          <Property Name="ContactURL" Type="varchar" MaxLength="255" />
+          <Property Name="SystemSiteID" Type="int" />
+          <Property Name="IBN" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="tbl_regionalsettings">
+          <Key>
+            <PropertyRef Name="Laguage" />
+          </Key>
+          <Property Name="Laguage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageValue" Type="varchar" MaxLength="50" />
+          <Property Name="Color" Type="varchar" MaxLength="50" />
+          <Property Name="ColorValue" Type="varchar" MaxLength="50" />
+          <Property Name="Organization" Type="varchar" MaxLength="50" />
+          <Property Name="OrganizationValue" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="StateValue" Type="varchar" MaxLength="50" />
+          <Property Name="Centre" Type="varchar" MaxLength="50" />
+          <Property Name="CentreValue" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCodeValue" Type="varchar" MaxLength="50" />
+          <Property Name="Metre" Type="varchar" MaxLength="50" />
+          <Property Name="MetreValue" Type="varchar" MaxLength="50" />
+          <Property Name="Weight" Type="varchar" MaxLength="50" />
+          <Property Name="WeightValue" Type="varchar" MaxLength="50" />
+          <Property Name="PaperMeasure" Type="varchar" MaxLength="50" />
+          <Property Name="PaperMeasureValue" Type="varchar" MaxLength="50" />
+          <Property Name="License" Type="varchar" MaxLength="50" />
+          <Property Name="LicenceMeasure" Type="varchar" MaxLength="50" />
+          <Property Name="IsSelected" Type="smallint" />
+        </EntityType>
+        <EntityContainer Name="MPCModelStoreContainer">
+          <EntitySet Name="tbl_company" EntityType="Self.tbl_company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_language" EntityType="Self.tbl_language" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_regionalsettings" EntityType="Self.tbl_regionalsettings" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MPCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteLogo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MISLogo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="Country" Type="Int32" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RegNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaxName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CostCentreDLL" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CostCentreUpdationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FriendlyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uiCulture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="culture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RegionalSettings">
+          <Key>
+            <PropertyRef Name="Laguage" />
+          </Key>
+          <Property Name="Laguage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColorValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Organization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Centre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CentreValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCodeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Metre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MetreValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WeightValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaperMeasure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaperMeasureValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="License" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LicenceMeasure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsSelected" Type="Int16" />
+        </EntityType>
+        <EntityContainer Name="MPCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="MPCModel.Company" />
+          <EntitySet Name="Languages" EntityType="MPCModel.Language" />
+          <EntitySet Name="RegionalSettings" EntityType="MPCModel.RegionalSettings" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MPCModelStoreContainer" CdmEntityContainer="MPCEntities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="MPCModel.Company">
+              <MappingFragment StoreEntitySet="tbl_company">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="WebsiteLogo" ColumnName="WebsiteLogo" />
+                <ScalarProperty Name="MISLogo" ColumnName="MISLogo" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="TaxNo" ColumnName="TaxNo" />
+                <ScalarProperty Name="TaxName" ColumnName="TaxName" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="CostCentreDLL" ColumnName="CostCentreDLL" />
+                <ScalarProperty Name="CostCentreUpdationDate" ColumnName="CostCentreUpdationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="MPCModel.Language">
+              <MappingFragment StoreEntitySet="tbl_language">
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="uiCulture" ColumnName="uiCulture" />
+                <ScalarProperty Name="culture" ColumnName="culture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegionalSettings">
+            <EntityTypeMapping TypeName="MPCModel.RegionalSettings">
+              <MappingFragment StoreEntitySet="tbl_regionalsettings">
+                <ScalarProperty Name="Laguage" ColumnName="Laguage" />
+                <ScalarProperty Name="LanguageValue" ColumnName="LanguageValue" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="ColorValue" ColumnName="ColorValue" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="OrganizationValue" ColumnName="OrganizationValue" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateValue" ColumnName="StateValue" />
+                <ScalarProperty Name="Centre" ColumnName="Centre" />
+                <ScalarProperty Name="CentreValue" ColumnName="CentreValue" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="ZipCodeValue" ColumnName="ZipCodeValue" />
+                <ScalarProperty Name="Metre" ColumnName="Metre" />
+                <ScalarProperty Name="MetreValue" ColumnName="MetreValue" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightValue" ColumnName="WeightValue" />
+                <ScalarProperty Name="PaperMeasure" ColumnName="PaperMeasure" />
+                <ScalarProperty Name="PaperMeasureValue" ColumnName="PaperMeasureValue" />
+                <ScalarProperty Name="License" ColumnName="License" />
+                <ScalarProperty Name="LicenceMeasure" ColumnName="LicenceMeasure" />
+                <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
