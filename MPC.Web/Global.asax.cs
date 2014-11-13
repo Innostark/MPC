@@ -70,10 +70,8 @@ namespace MPC.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             // Set MVC resolver
-            //DependencyResolver.SetResolver(new UnityDependencyResolver(container));
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
             // Set Web Api resolver
-            //GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
 
